@@ -177,7 +177,7 @@
                                                     <tbody class="col-lg-12 col-xl-6 p-0">
                                                         <tr>
                                                             <td><h5><b>Aina ya Biashara :</b></h5></td>
-                                                            <td>MBOGAMBOGA</td>
+                                                            <td>{{ $members[0]->businessType}}</td>
                                                         </tr>
                                                         <tr>
                                                             <td><h5><b>Namba ya kizimba:</b></h5></td>
