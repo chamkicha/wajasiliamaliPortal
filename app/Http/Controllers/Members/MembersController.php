@@ -114,7 +114,7 @@ class MembersController extends Controller
             $members =  '';
         }
         $members  =  $members->data;
-        // dd($members);
+        dd($members);
         // $tittle = 'Orodha ya Wanachama';
         return view('members.view', compact('members'));
     }catch (\Throwable $exception){

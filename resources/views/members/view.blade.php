@@ -319,19 +319,20 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    @foreach($members[0]->paymentDetails as $paymentDetail)
                                                     <tr>
                                                         <td>1</td>
-                                                        <td>Ada ya Usajili</td>
-                                                        <td>1,000</td>
-                                                        <td><i class="fa fa-check mr-1 text-success"></i>Amelipa</td>
+                                                        <td>{{ $paymentDetail->paymentName}}</td>
+                                                        <td>{{ $paymentDetail->paymentAmount}}</td>
+                                                        <td>
+                                                         @if($paymentDetail->paidStatus == '1')   
+                                                          <i class="fa fa-check mr-1 text-success"></i>Amelipa
+                                                         @else
+                                                          <i class="fa fa-check mr-1 text-danger"></i>Hajalipa
+                                                         @endif
+                                                        </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Kitambulisho cha Mjasiliamali</td>
-                                                        <td>20,000</td>
-                                                        <td><i class="fa fa-check mr-1 text-success"></i>Amelipa</td>
-                                                        
-                                                    </tr>
+                                                    @endforeach
                                                                                         
                                                 </tbody>
                                             </table>
