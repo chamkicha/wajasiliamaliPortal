@@ -20,18 +20,25 @@
         </li>
         @endif
 
+        @if(in_array('vyama' ,permissions()))
         <li class="slide">
             <a class="side-menu__item"  data-toggle="slide" href="{{ url('/Shirikisho') }}"><i class="side-menu__icon fa fa-angle-double-right"></i><span class="side-menu__label">Vyama</span></a>
             
         </li>
+        @endif
+
+        
+        @if(in_array('sekta-ya-vyama' ,permissions()))
         <li class="slide">
             <a class="side-menu__item"  data-toggle="slide" href="{{ url('/MakundiWizara') }}"><i class="side-menu__icon fa fa-angle-double-right"></i><span class="side-menu__label">Sekta za Vyama</span></a>
             
         </li>
+        @endif
 
         
 
         
+        @if(in_array('masoko' ,permissions()))
         <li class="slide">
             <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-angle-double-right"></i><span class="side-menu__label">Masoko / Maeneo</span><i class="angle fa fa-angle-right"></i></a>
             <ul class="slide-menu">
@@ -39,7 +46,9 @@
                 <li><a href="{{ url('/vizimba') }}" class="slide-item">Maeneo / vizimba</a></li>
             </ul>
         </li>
+        @endif
         
+        @if(in_array('ripoti' ,permissions()))
         <li><h3>Ripoti</h3></li>
         
         <li class="slide">
@@ -52,7 +61,10 @@
                 <li><a href="{{ url('/reports/mikopo')}}" class="slide-item">Ripoti ya Mikopo</a></li>
             </ul>
         </li>
+        @endif
         
+        
+        @if(in_array('mipangilio' ,permissions()))
         <li><h3>Mipangilio</h3></li>
         
         <li class="slide">
@@ -71,5 +83,6 @@
             </ul>
         </li>
 
+        @endif
         
     </ul>

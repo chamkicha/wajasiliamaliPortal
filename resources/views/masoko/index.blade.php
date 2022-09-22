@@ -26,10 +26,11 @@
              <div class="card">
                  <div class="card-header">
                      <h3 class="card-title">Soko</h3>
-
+                     @if(in_array('add-masoko' ,permissions()))
                      <div class="d-flex  ml-auto header-right-icons header-search-icon">
                          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal3">Ongeza Soko</button>
                      </div>
+                     @endif
                  </div>
                  <div class="card-body">
                      <div class="table-responsive">
@@ -62,17 +63,22 @@
                                      <td>{{ $soko['districtName'] }}</td>
                                      <td>{{ $soko['regionName'] }}</td>
                                      <td>
+                                     @if(in_array('view-masoko' ,permissions()))
                                          <button type="button" class="btn btn-icon  btn-primary">
                                              <a href="{{ url('/masoko/view', $soko['sokoId']) }}" style="color:white;"><i class="fe fe-eye"></i>
                                          </button>
+                                         @endif
 
+                                         @if(in_array('edit-masoko' ,permissions()))
                                          <button type="button" class="btn btn-icon  btn-info">
                                              <a href="{{ url('/masoko/edit', $soko['sokoId']) }}" style="color:white;"><i class="fe fe-edit"></i>
                                          </button>
-
+                                         @endif
+                                         @if(in_array('delete-masoko' ,permissions()))
                                          <button type="button" class="btn btn-icon  btn-danger">
                                              <a href="{{ url('/masoko/delete', $soko['sokoId']) }}" style="color:white;"><i class="fe fe-delete"></i>
                                          </button>
+                                         @endif
              
                                          
                                      </td>

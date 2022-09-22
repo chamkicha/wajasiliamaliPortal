@@ -54,17 +54,22 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
                                     <div class="col-lg-6 col-md-12">
                                         <div class="wideget-user-info">
                                             <div class="wideget-user-warap">
+                                            @if(in_array('fedha-malipo-mwanachama' ,permissions()))
                                                 <div class="wideget-user-warap-l">
                                                     <h4 class="text-info">21,000 (Tsh)</h4>
                                                     <p>Jumla ya Malipo</p>
                                                 </div>
+                                                @endif
+                                                @if(in_array('fedha-mikopo-mwanachama' ,permissions()))
                                                 <div class="wideget-user-warap-r">
                                                     <h4 class="text-danger">200,000 (Tsh)</h4>
                                                     <p>Jumla Mkopo</p>
                                                 </div>
+                                                @endif
                                             </div>
 
                                         </div>
@@ -80,8 +85,12 @@
                                             <li class=""><a href="#taarifa-mwanachama" class="active show" data-toggle="tab">Taarifa za Mwanachama</a></li>
                                             <li><a href="#taarifa-bihashara" data-toggle="tab" class="">Taarifa za Biashara</a></li>
                                             <li><a href="#taarifa-makazi" data-toggle="tab" class="">Taarifa za Makazi</a></li>
+                                            @if(in_array('fedha-malipo-mwanachama' ,permissions()))
                                             <li><a href="#malipo" data-toggle="tab" class="">Taarifa za Malipo</a></li>
+                                            @endif
+                                            @if(in_array('fedha-mikopo-mwanachama' ,permissions()))
                                             <li><a href="#taarifa-mkopo" data-toggle="tab" class="">Taarifa za Mikopo</a></li>
+                                            @endif
                                         </ul>
                                     </div>
                                 </div>

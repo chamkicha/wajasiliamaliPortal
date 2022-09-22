@@ -137,9 +137,11 @@
                                             <td>{{ $member['districtName'] }}</td>
                                             <td>{{ $member['regionName'] }}</td>
                                             <td>
+                                            @if(in_array('view-mwanachama' ,permissions()))
                                                 <button type="button" class="btn btn-icon  btn-primary">
                                                     <a href="{{ url('/members/view', $member['memberId']) }}" style="color:white;"><i class="fe fe-eye"></i>
                                                 </button>
+                                                @endif
        
                                                 {{--  <button type="button" class="btn btn-icon  btn-info">
                                                     <a href="{{ url('/members/edit', $member['memberId']) }}" style="color:white;"><i class="fe fe-edit"></i>

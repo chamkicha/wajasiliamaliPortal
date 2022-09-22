@@ -26,10 +26,12 @@
              <div class="card">
                  <div class="card-header">
                      <h3 class="card-title">Orodha ya Vyama</h3>
-
+                
+                     @if(in_array('add-vyama' ,permissions()))
                      <div class="d-flex  ml-auto header-right-icons header-search-icon">
                          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal3">Ongeza Chama</button>
                      </div>
+                     @endif
                  </div>
                  <div class="card-body">
                      <div class="table-responsive">
@@ -49,17 +51,22 @@
                                      <td>{{ $shirikisho['shirikishoName'] }}</td>
                                      <td>{{ $shirikisho['makundiName'] }}</td>
                                      <td>
+                                     @if(in_array('view-vyama' ,permissions()))
                                          <button type="button" class="btn btn-icon  btn-primary">
                                              <a href="{{ url('/makundi/view', $shirikisho['shirikishoId']) }}" style="color:white;"><i class="fe fe-eye"></i>
                                          </button>
+                                         @endif
 
+                                         @if(in_array('edit-vyama' ,permissions()))
                                          <button type="button" class="btn btn-icon  btn-info">
                                              <a href="{{ url('/makundi/edit', $shirikisho['shirikishoId']) }}" style="color:white;"><i class="fe fe-edit"></i>
                                          </button>
-
+                                         @endif
+                                         @if(in_array('delete-vyama' ,permissions()))
                                          <button type="button" class="btn btn-icon  btn-danger">
                                              <a href="{{ url('/makundi/delete', $shirikisho['shirikishoId']) }}" style="color:white;"><i class="fe fe-delete"></i>
                                          </button>
+                                         @endif
              
                                          
                                      </td>

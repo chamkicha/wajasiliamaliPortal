@@ -29,9 +29,11 @@
                     <div class="card-header">
                         <h3 class="card-title">Makundi</h3>
                         
+                        @if(in_array('add-sekta-ya-vyama' ,permissions()))
                         <div class="d-flex  ml-auto header-right-icons header-search-icon">
                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal3">Ongeza Makundi ya Vyama</button>
                         </div>
+                        @endif
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -49,17 +51,22 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $category['categoryName'] }}</td>
                                         <td>
+                                            
+                                            @if(in_array('view-sekta-ya-vyama' ,permissions()))
                                             <button type="button" class="btn btn-icon  btn-primary">
                                                 <a href="{{ url('/makundi/view', $category['categoryId']) }}" style="color:white;"><i class="fe fe-eye"></i>
                                             </button>
-
+                                            @endif
+                                            @if(in_array('edit-sekta-ya-vyama' ,permissions()))
                                             <button type="button" class="btn btn-icon  btn-info">
                                                 <a href="{{ url('/makundi/edit', $category['categoryId']) }}" style="color:white;"><i class="fe fe-edit"></i>
                                             </button>
-
+                                            @endif
+                                            @if(in_array('delete-sekta-ya-vyama' ,permissions()))
                                             <button type="button" class="btn btn-icon  btn-danger">
                                                 <a href="{{ url('/makundi/delete', $category['categoryId']) }}" style="color:white;"><i class="fe fe-delete"></i>
                                             </button>
+                                            @endif
                 
                                             
                                         </td>
