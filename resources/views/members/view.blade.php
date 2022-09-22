@@ -321,14 +321,16 @@
                                                 <tbody>
                                                     @foreach($members[0]->paymentDetails as $paymentDetail)
                                                     <tr>
-                                                        <td>1</td>
+                                                        <td>{{ $loop->iteration}}</td>
                                                         <td>{{ $paymentDetail->paymentName}}</td>
                                                         <td>{{ $paymentDetail->paymentAmount}}</td>
                                                         <td>
                                                          @if($paymentDetail->paidStatus == '1')   
                                                           <i class="fa fa-check mr-1 text-success"></i>Amelipa
-                                                         @else
+                                                         @elseif($paymentDetail->paidStatus == '0') 
                                                           <i class="fa fa-check mr-1 text-danger"></i>Hajalipa
+                                                          @else
+
                                                          @endif
                                                         </td>
                                                     </tr>
